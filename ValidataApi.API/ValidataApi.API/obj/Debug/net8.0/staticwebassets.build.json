@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "+qZ5peorYsPsZ3DdKYWikHL08xWFHGLOipR4xFW//DU=",
+  "Source": "ValidataApi.API",
+  "BasePath": "_content/ValidataApi.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

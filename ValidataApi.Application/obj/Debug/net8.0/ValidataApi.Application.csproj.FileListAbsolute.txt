@@ -1,0 +1,17 @@
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Application.deps.json
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Application.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Application.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Domain.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Infrastructure.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Infrastructure.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\bin\Debug\net8.0\ValidataApi.Domain.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.csproj.AssemblyReference.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.AssemblyInfoInputs.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.AssemblyInfo.cs
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.csproj.CoreCompileInputs.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\Validata.41E0E4F6.Up2Date
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\refint\ValidataApi.Application.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ValidataApi.Application.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Application\obj\Debug\net8.0\ref\ValidataApi.Application.dll

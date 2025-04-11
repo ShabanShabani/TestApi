@@ -1,0 +1,11 @@
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\bin\Debug\net8.0\ValidataApi.Domain.deps.json
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\bin\Debug\net8.0\ValidataApi.Domain.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\bin\Debug\net8.0\ValidataApi.Domain.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ValidataApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ValidataApi.Domain.AssemblyInfoInputs.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ValidataApi.Domain.AssemblyInfo.cs
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ValidataApi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ValidataApi.Domain.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\refint\ValidataApi.Domain.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ValidataApi.Domain.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Domain\obj\Debug\net8.0\ref\ValidataApi.Domain.dll

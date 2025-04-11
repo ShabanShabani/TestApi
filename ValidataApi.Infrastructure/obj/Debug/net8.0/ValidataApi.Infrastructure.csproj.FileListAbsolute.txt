@@ -1,0 +1,17 @@
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\bin\Debug\net8.0\ValidataApi.Infrastructure.deps.json
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\bin\Debug\net8.0\ValidataApi.Infrastructure.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\bin\Debug\net8.0\ValidataApi.Infrastructure.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\bin\Debug\net8.0\ValidataApi.Domain.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\bin\Debug\net8.0\ValidataApi.Domain.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.AssemblyInfo.cs
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\Validata.EEDBD28D.Up2Date
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\refint\ValidataApi.Infrastructure.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.pdb
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ref\ValidataApi.Infrastructure.dll
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\bin\Debug\net8.0\ValidataApi.Infrastructure.runtimeconfig.json
+C:\Users\shaba\source\repos\ValidataApi\ValidataApi.Infrastructure\obj\Debug\net8.0\ValidataApi.Infrastructure.genruntimeconfig.cache
