@@ -36,8 +36,69 @@
         }
       }
     },
-    "/api/Customers/{id}/orders": {
+    "/api/Customers/{id}": {
       "get": {
+        "tags": [
+          "Customers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Customers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCustomerCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCustomerCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCustomerCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
         "tags": [
           "Customers"
         ],
@@ -83,6 +144,29 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Orders/customer/{customerId}": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -151,87 +235,35 @@
             "description": "OK"
           }
         }
-      },
-      "get": {
-        "tags": [
-          "Orders"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/WeatherForecast": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     }
   },
   "components": {
     "schemas": {
       "CreateCustomerCommand": {
+        "required": [
+          "firstName",
+          "lastName"
+        ],
         "type": "object",
         "properties": {
           "firstName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
           },
           "lastName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
           },
           "address": {
             "type": "string",
             "nullable": true
           },
           "postalCode": {
+            "maxLength": 20,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           }
@@ -239,9 +271,15 @@
         "additionalProperties": false
       },
       "CreateOrderCommand": {
+        "required": [
+          "items",
+          "orderDate"
+        ],
         "type": "object",
         "properties": {
           "customerId": {
+            "maximum": 2147483647,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
@@ -250,34 +288,79 @@
             "format": "date-time"
           },
           "items": {
+            "minItems": 1,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ItemDto"
-            },
-            "nullable": true
+            }
           }
         },
         "additionalProperties": false
       },
       "ItemDto": {
+        "required": [
+          "productName"
+        ],
         "type": "object",
         "properties": {
           "productName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
           },
           "productPrice": {
+            "minimum": 0.01,
             "type": "number",
             "format": "double"
           },
           "quantity": {
+            "maximum": 2147483647,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           }
         },
         "additionalProperties": false
       },
+      "UpdateCustomerCommand": {
+        "required": [
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateOrderCommand": {
+        "required": [
+          "items",
+          "orderDate"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -289,34 +372,11 @@
             "format": "date-time"
           },
           "items": {
+            "minItems": 1,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ItemDto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
-            "nullable": true
+            }
           }
         },
         "additionalProperties": false

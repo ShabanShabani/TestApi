@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using ValidataApi.Application.Commands;
 using ValidataApi.Application.DTOs;
+using ValidataApi.Application.Queries;
 using ValidataApi.Infrastructure.UnitOfWork;
 
 namespace ValidataApi.API.Controllers
@@ -9,86 +11,65 @@ namespace ValidataApi.API.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
 
-        public OrdersController(IUnitOfWork unitOfWork)
+        public OrdersController(IMediator mediator)
         {
-            _unitOfWork = unitOfWork;
+            _mediator = mediator;
         }
 
         /// <summary>
-        /// Creates a new order for a customer.
+        /// Creates a new order.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderCommand command)
         {
-            var handler = new CreateOrderCommandHandler(_unitOfWork);
-            var orderId = await handler.Handle(command);
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var orderId = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetOrder), new { id = orderId }, orderId);
         }
+
         /// <summary>
-        /// Updates an existing order.
+        /// Gets orders for a customer.
         /// </summary>
-        /// <param name="id">The order ID.</param>
-        /// <param name="command">Updated order details including items.</param>
+        [HttpGet("customer/{customerId}")]
+        public async Task<IActionResult> GetCustomerOrders(int customerId)
+        {
+            var query = new GetCustomerOrdersByDateQuery { CustomerId = customerId };
+            var orders = await _mediator.Send(query);
+            return Ok(orders);
+        }
+
+        /// <summary>
+        /// Updates an order.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOrder(int id, [FromBody] UpdateOrderCommand command)
         {
-            try
-            {
-                command.Id = id;
-                var handler = new UpdateOrderCommandHandler(_unitOfWork);
-                await handler.Handle(command);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            if (!ModelState.IsValid || id != command.Id)
+                return BadRequest(ModelState);
+
+            await _mediator.Send(command);
+            return NoContent();
         }
 
         /// <summary>
         /// Deletes an order.
         /// </summary>
-        /// <param name="id">The order ID.</param>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
-            try
-            {
-                var command = new DeleteOrderCommand { Id = id };
-                var handler = new DeleteOrderCommandHandler(_unitOfWork);
-                await handler.Handle(command);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var command = new DeleteOrderCommand { Id = id };
+            await _mediator.Send(command);
+            return NoContent();
         }
 
-        /// <summary>
-        /// Gets an order by ID.
-        /// </summary>
-        /// <param name="id">The order ID.</param>
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetOrder(int id)
+        private async Task<IActionResult> GetOrder(int id)
         {
-            var order = await _unitOfWork.Orders.GetByIdAsync(id);
-            if (order == null) return NotFound();
-            var orderDto = new OrderDto
-            {
-                Id = order.Id,
-                OrderDate = order.OrderDate,
-                TotalPrice = order.TotalPrice,
-                Items = order.Items.Select(i => new ItemDto
-                {
-                    ProductName = i.Product.Name,
-                    ProductPrice = i.Product.Price,
-                    Quantity = i.Quantity
-                }).ToList()
-            };
-            return Ok(orderDto);
+            // Placeholder for GetOrder by ID if needed
+            return NotFound();
         }
     }
 }
